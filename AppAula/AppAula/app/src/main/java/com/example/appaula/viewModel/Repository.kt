@@ -3,6 +3,7 @@ package com.example.appaula.viewModel
 import com.example.appaula.roomdb.Pessoa
 import com.example.appaula.roomdb.PessoaDataBase
 
+/*executa os comandos do banco de dados*/
 data class Repository(private val db:PessoaDataBase){
     suspend fun upsertPessoa(pessoa: Pessoa){
         db.pessoaDao().upsertPessoa(pessoa)
