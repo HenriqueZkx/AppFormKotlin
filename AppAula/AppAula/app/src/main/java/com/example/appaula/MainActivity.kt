@@ -78,6 +78,7 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun App(viewModel: PessoaViewModel, mainActivity: MainActivity){
+    /*criação das variáveis*/
     var nome by remember {
         mutableStateOf("")
     }
@@ -91,6 +92,7 @@ fun App(viewModel: PessoaViewModel, mainActivity: MainActivity){
         telefone
     )
 
+    /*cria a tabela para o select*/
     var pessoaList by remember {
         mutableStateOf(listOf<Pessoa>())
     }
@@ -167,6 +169,7 @@ fun App(viewModel: PessoaViewModel, mainActivity: MainActivity){
             Arrangement.Center
         ){
             Button(
+                /*confirma o registro (insert)*/
                 onClick = {
                     viewModel.upsertPessoa(pessoa)
                     nome = ""
